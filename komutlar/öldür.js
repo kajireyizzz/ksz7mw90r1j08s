@@ -17,7 +17,7 @@ exports.run = function(client, message, args) {
     .setColor("RANDOM")
     .addField(`${message.author.username}`,`${user}`+ " kişisini öldürdü.!")
     .setImage('https://cdn.discordapp.com/attachments/363746758083477505/400337232625401856/animation_2.gif')
-    .setFooter("OA Premium")
+    .setFooter("Penia BOT")
     return message.channel.send(oldur);
 
 
