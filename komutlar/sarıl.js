@@ -1,17 +1,12 @@
 const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
-
-    var user;
-    let member = message.mentions.users.first();
-        let author = message.author;
-        if(member) {
-             user = member;
-        } else {
-             user = author;
-        }{
-        } member = message.guild.member(user);
-
+ let member = message.mentions.users.first();
+    
+    let user = message.mentions.users.first();
+    if (message.mentions.users.size < 1) return message.reply('Kime Sarılmak İstediğini Yazmalısın').catch(console.error);
+ 
+    
     const saril=new Discord.RichEmbed()
     .setColor("RANDOM")
     .addField(`${message.author.username}`,`${user}`+ " adlı kullanıcıya sarıldı!")
