@@ -1,6 +1,27 @@
+const ayarlar = require('../ayarlar.json');
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+
+  
+
+
+
 module.exports = member => {
-  let guild = member.guild;
-    const channel = member.guild.channels.find('name', 'giriş-çıkış');
+    let username = member.user.username;
+    let guild = member.guild;
+    
+    const channel = member.guild.channels.find('name', 'logs');
     if (!channel) return;
-    channel.send(`:outbox_tray: **|${member} sunucudan ayrıldı.**`);
+    const embed = new Discord.RichEmbed()
+    .setColor(' #FF0000')
+   
+    .setAuthor("Görüşürüz.!", member.user.avatarURL || member.user.defaultAvatarURL)
+    .setTitle(`@${member.user.username} #${member.user.discriminator} Ayrıldı.`)
+    .setThumbnail(member.user.avatarURL || member.user.defaultAvatarURL)
+  
+    
+    .setTimestamp()
+    .setFooter("giris-cikis sistemi>>OA Premium")
+    channel.send(embed);
 };
