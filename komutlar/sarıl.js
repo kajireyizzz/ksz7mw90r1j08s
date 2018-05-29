@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
- let member = message.mentions.users.first();
-    
+
     var user;
-  
+    let member = message.mentions.users.first();
         let author = message.author;
         if(member) {
              user = member;
@@ -12,13 +11,12 @@ exports.run = function(client, message, args) {
              user = author;
         }{
         } member = message.guild.member(user);
- 
-    
+
     const saril=new Discord.RichEmbed()
     .setColor("RANDOM")
     .addField(`${message.author.username}`,`${user}`+ " adlı kullanıcıya sarıldı!")
     .setImage('https://media3.giphy.com/media/10BcGXjbHOctZC/giphy.gif')
-    .setFooter("OA Premium")
+    .setFooter("Penia BOT")
     return message.channel.send(saril);
 
 
